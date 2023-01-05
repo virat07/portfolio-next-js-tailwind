@@ -12,6 +12,7 @@ import {
 } from "react-icons/si";
 import { FaNodeJs, FaReact } from "react-icons/fa";
 function SkillsComponent() {
+  // map the skill section
   return (
     <>
       <div className="py-10 mb-12 min-h-screen">

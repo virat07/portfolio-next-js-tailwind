@@ -1,6 +1,6 @@
 import React from "react";
-import { FaTwitter,FaLinkedin } from "react-icons/fa";
-import {SiMinutemailer} from 'react-icons/si';
+import { FaTwitter, FaLinkedin } from "react-icons/fa";
+import { SiMinutemailer } from "react-icons/si";
 function Footer() {
   return (
     <>
@@ -13,27 +13,28 @@ function Footer() {
             &copy; {new Date().getFullYear()} All Rights Reversed
           </footer>
           <ul>
+            {/* make a short code */}
             <div className="flex gap-6 md:pb-5 md:pt-5 sm:justify-center">
               <a
                 className="cursor-pointer"
                 href="https://twitter.com/bharatgupta07"
                 target="_blank"
               >
-                <FaTwitter className="text-2xl cursor-pointer hover:text-blue-600" />
+                <FaTwitter className="text-2xl cursor-pointer hover:text-blue-600  hover:shadow-[0 0.5em 0.5em -0.4em ] hover:shadow-cyan-500/50 hover:translate-y-[-0.25em]" />
               </a>
               <a
                 className="cursor-pointer"
                 href="https://www.linkedin.com/in/bharat-gupta-07/"
                 target="_blank"
               >
-                <FaLinkedin className="text-2xl cursor-pointer hover:text-blue-600" />
+                <FaLinkedin className="text-2xl cursor-pointer hover:text-blue-600  hover:shadow-[0 0.5em 0.5em -0.4em ] hover:shadow-cyan-500/50 hover:translate-y-[-0.25em]" />
               </a>
               <a
-                className="cursor-pointer"  
+                className="cursor-pointer"
                 href="mailto:bharat.gupta1407@gmail.com"
                 target="_blank"
               >
-                <SiMinutemailer className="text-2xl cursor-pointer hover:text-red-600" />
+                <SiMinutemailer className="text-2xl cursor-pointer hover:shadow-[0 0.5em 0.5em -0.4em ] hover:shadow-cyan-500/50 hover:translate-y-[-0.25em] hover:text-red-600" />
               </a>
             </div>
           </ul>
