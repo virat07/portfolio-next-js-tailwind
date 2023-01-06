@@ -1,4 +1,4 @@
-import React,{useState, useEffect} from 'react';
+import React, { useState, useEffect } from "react";
 import { useTheme } from "next-themes";
 import Head from "next/head";
 import Image from "next/image";
@@ -6,9 +6,9 @@ import deved from "../public/dev-ed-wave.png";
 import Footer from "../components/footer";
 import SkillsComponent from "../components/skills";
 import { FaGithub, FaTwitter, FaLinkedin } from "react-icons/fa";
-import {FiSun} from 'react-icons/fi';
-import {IoMdMoon} from 'react-icons/io';
-import Button from '../components/button';
+import { FiSun } from "react-icons/fi";
+import { IoMdMoon } from "react-icons/io";
+import Button from "../components/button";
 
 export default function Home() {
   const { systemTheme, theme, setTheme } = useTheme();
@@ -18,29 +18,30 @@ export default function Home() {
     setMounted(true);
   }, []);
   const renderThemeChanger = () => {
-    if(!mounted) return null;
+    if (!mounted) return null;
 
-    const currentTheme = theme === 'system' ? systemTheme : theme;
-    
-    if(currentTheme === 'dark') {
+    const currentTheme = theme === "system" ? systemTheme : theme;
+
+    if (currentTheme === "dark") {
       return (
-        <Button className="bg-gradient-to-r  from-cyan-500 to-teal-500"
-          onClick={() => setTheme('light')}
+        <Button
+          className="bg-gradient-to-r  from-cyan-500 to-teal-500  hover:shadow-[0 0.5em 0.5em -0.4em ] hover:shadow-cyan-500/50 hover:translate-y-[-0.25em]"
+          onClick={() => setTheme("light")}
         >
-         <FiSun/>
+          <FiSun />
         </Button>
-      )
+      );
     } else {
       return (
-        <Button className="bg-gradient-to-r  from-cyan-500 to-teal-500"
-          onClick={() => setTheme('dark')}
+        <Button
+          className="bg-gradient-to-r  from-cyan-500 to-teal-500  hover:shadow-[0 0.5em 0.5em -0.4em ] hover:shadow-cyan-500/50 hover:translate-y-[-0.25em]"
+          onClick={() => setTheme("dark")}
         >
-         <IoMdMoon/>
+          <IoMdMoon />
         </Button>
-      )
+      );
     }
-
-  }
+  };
   return (
     <>
       <Head>
@@ -56,17 +57,15 @@ export default function Home() {
             <ul className="flex items-center">
               <li>
                 <a
-                  className="hover:ring-2 hover:ring-gray-300  bg-gradient-to-r  from-cyan-500 to-teal-500 text-white px-4 py-2 border-none rounded-md ml-8"
+                  className="hover:ring-2 hover:ring-gray-300  hover:shadow-[0 0.5em 0.5em -0.4em ] hover:shadow-cyan-500/50 hover:translate-y-[-0.25em] bg-gradient-to-r  from-cyan-500 to-teal-500 text-white px-4 py-2 border-none rounded-md ml-8"
                   href="../public/bharatguptaresume.pdf"
                   download="Bharat Gupta resume"
                   target="_blank"
                 >
                   Resume
-                </a>    
-                </li>
-                <li className='pl-5 '>
-                {renderThemeChanger()}
+                </a>
               </li>
+              <li className="pl-5 ">{renderThemeChanger()}</li>
             </ul>
           </nav>
           <div className="text-center p-10">
@@ -87,21 +86,21 @@ export default function Home() {
                 href="https://twitter.com/bharatgupta07"
                 target="_blank"
               >
-                <FaTwitter className="text-2xl cursor-pointer hover:text-blue-600" />
+                <FaTwitter className="text-2xl cursor-pointer hover:text-blue-600  hover:shadow-[0 0.5em 0.5em -0.4em ] hover:shadow-cyan-500/50 hover:translate-y-[-0.25em]" />
               </a>
               <a
                 className="cursor-pointer"
                 href="https://www.linkedin.com/in/bharat-gupta-07/"
                 target="_blank"
               >
-                <FaLinkedin className="text-2xl cursor-pointer hover:text-blue-600" />
+                <FaLinkedin className="text-2xl cursor-pointer hover:text-blue-600  hover:shadow-[0 0.5em 0.5em -0.4em ] hover:shadow-cyan-500/50 hover:translate-y-[-0.25em]" />
               </a>
               <a
                 className="cursor-pointer"
                 href="https://github.com/virat07"
                 target="_blank"
               >
-                <FaGithub className="text-2xl cursor-pointer hover:text-gray-600" />
+                <FaGithub className="text-2xl cursor-pointer hover:text-gray-600  hover:shadow-[0 0.5em 0.5em -0.4em ] hover:shadow-cyan-500/50 hover:translate-y-[-0.25em]" />
               </a>
             </div>
           </div>
@@ -109,10 +108,9 @@ export default function Home() {
             <Image src={deved} alt="dev" layout="fill" objectFit="cover" />
           </div>
         </section>
-        <div className = 'px-10 md:px-20 lg:px-40'>
-        <SkillsComponent />
+        <div className="px-10 md:px-20 lg:px-40">
+          <SkillsComponent />
         </div>
-       
       </main>
       <Footer />
     </>
