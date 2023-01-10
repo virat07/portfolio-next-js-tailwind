@@ -5,14 +5,15 @@ import Image from "next/image";
 import deved from "../public/dev-ed-wave.png";
 import Footer from "../components/footer";
 import SkillsComponent from "../components/skills";
-import { FaGithub, FaTwitter, FaLinkedin } from "react-icons/fa";
 import { FiSun } from "react-icons/fi";
 import { IoMdMoon } from "react-icons/io";
 import Button from "../components/button";
+import { IconComponent } from "../components/iconComponent";
 
 export default function Home() {
   const { systemTheme, theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
+  const icons = ["twitter", "linkedin", "github"];
 
   useEffect(() => {
     setMounted(true);
@@ -81,27 +82,9 @@ export default function Home() {
               designing.
             </p>
             <div className="flex justify-center gap-6 p-5">
-              <a
-                className="cursor-pointer"
-                href="https://twitter.com/bharatgupta07"
-                target="_blank"
-              >
-                <FaTwitter className="text-2xl cursor-pointer hover:text-blue-600  hover:shadow-[0 0.5em 0.5em -0.4em ] hover:shadow-cyan-500/50 hover:translate-y-[-0.25em]" />
-              </a>
-              <a
-                className="cursor-pointer"
-                href="https://www.linkedin.com/in/bharat-gupta-07/"
-                target="_blank"
-              >
-                <FaLinkedin className="text-2xl cursor-pointer hover:text-blue-600  hover:shadow-[0 0.5em 0.5em -0.4em ] hover:shadow-cyan-500/50 hover:translate-y-[-0.25em]" />
-              </a>
-              <a
-                className="cursor-pointer"
-                href="https://github.com/virat07"
-                target="_blank"
-              >
-                <FaGithub className="text-2xl cursor-pointer hover:text-gray-600  hover:shadow-[0 0.5em 0.5em -0.4em ] hover:shadow-cyan-500/50 hover:translate-y-[-0.25em]" />
-              </a>
+              {icons.map((iconsName) => {
+                return <IconComponent name={iconsName} />;
+              })}
             </div>
           </div>
           <div className="relative mx-auto bg-gradient-to-b from-teal-500 rounded-full w-80 h-80 mt-20 overflow-hidden">
