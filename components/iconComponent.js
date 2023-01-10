@@ -1,7 +1,7 @@
 import { FaGithub, FaTwitter, FaLinkedin } from "react-icons/fa";
 import { SiMinutemailer } from "react-icons/si";
 
-export const IconComponent = ({ name }) => {
+export const IconComponent = ({ name:any }) => {
   switch (name) {
     case "twitter":
       return (
@@ -46,6 +46,7 @@ export const IconComponent = ({ name }) => {
 			break;
 
     default:
+			return <></>
       break;
   }
 };
