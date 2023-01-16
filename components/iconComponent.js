@@ -1,7 +1,7 @@
 import { FaGithub, FaTwitter, FaLinkedin } from "react-icons/fa";
 import { SiMinutemailer } from "react-icons/si";
 
-export const IconComponent = ({ name:any }) => {
+export const IconComponent = ({ name }) => {
   switch (name) {
     case "twitter":
       return (
