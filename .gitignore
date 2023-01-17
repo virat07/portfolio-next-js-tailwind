@@ -12,4 +12,5 @@ node_modules
 # Ignore SASS config files
 .sass-cache
 .next
-.sanity/node_modules
+sanity/node_modules
+.next
