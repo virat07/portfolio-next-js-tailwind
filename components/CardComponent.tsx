@@ -7,7 +7,7 @@ type Props = {
 };
 const CardComponent = ({ experience }: Props) => {
   return (
-    <article className="flex flex-col rounded-lg items-center space-y-7 flex-shrink-0 w-[500px] md:w-[600px] xl:w-[900px] snap-center bg-[#292929] p-10 hover:opacity-100 opacity-40 cursor-pointer transition-opacity duration-200 overflow-hidden">
+    <article className="flex flex-col rounded-lg items-center space-y-7 flex-shrink-0 w-[500px] md:w-[600px] xl:w-[900px] snap-center bg-[#292929] p-10 hover:opacity-100 opacity-40 cursor-pointer transition-opacity duration-200 overflow-hidden h-fullscreen md:h-50 md:overflow-y-scroll  md:scrollbar-track-gray-400/20 md:scrollbar-thumb-[#F7AB0A]/80 md:scrollbar-thin">
       <motion.img
         initial={{ y: -100, opacity: 0 }}
         transition={{ duration: 1.2 }}
@@ -27,7 +27,7 @@ const CardComponent = ({ experience }: Props) => {
             />;
           })}
         </div>
-        <p className="uppercase py-5 text-gray-3001`"></p>
+        <p className="uppercase py-5 text-gray-300"></p>
         <ul className=" list-disc space-y-4 ml-5 text-lg h-96 pr-5 overflow-y-scroll scrollbar-thin scrollbar-thumb-[#F7AB0A]/80">
           {
             experience.points.map((point,index)=>{

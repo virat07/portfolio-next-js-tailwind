@@ -63,7 +63,7 @@ type Props = {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className="h-screen snap-y snap-mandator overflow-y-scroll overflow-x-hidden z-0  scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]/80">
+      <main className="h-screen snap-y snap-mandator overflow-scroll z-0  scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]/80">
         <HeaderComponent renderThemeChanger={renderThemeChanger} />
         <section id="hero" className="snap-start">
           <Hero pageInfo ={pageInfo} />
