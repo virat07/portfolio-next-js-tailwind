@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 
 const HeaderComponent = ({renderThemeChanger})=>{
     return(
-    <header className="py-10 mb-12 flex justify-between sticky top-0 max-w-7xl mx-auto z-20 xl:items-center p-5">
+    <header className="py-10 mb-12 flex justify-between sticky  max-w-7xl mx-auto z-20 xl:items-center p-5">
     <motion.div
       initial={{
         x: -500,
