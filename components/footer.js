@@ -16,7 +16,7 @@ function Footer() {
           <ul>
             <div className="flex gap-6 md:pb-5 md:pt-5 sm:justify-center">
               {icons.map((iconsName, index) => {
-                return <IconComponent name={iconsName} id={index} />;
+                return <IconComponent name={iconsName} key={index} />;
               })}
             </div>
           </ul>
