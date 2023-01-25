@@ -9,14 +9,27 @@ import HeaderComponent from "../components/header";
 import Hero from "../components/Hero";
 import WorkExperience from "../components/WorkExperience";
 import AboutUs from "../components/AboutUs";
-import SkillsComponent from "../components/skills";
+import SkillsComponent from "../components/SkillsComponent";
 import Contact from "../components/Contact";
 import { Experience, PageInfo, Skill } from "../typings";
-import { GetStaticProps } from "next";
+import { GetServerSideProps } from "next";
 import { fetchExperience} from "../utils/fetchExperience";
 import { fetchPageInfo } from "../utils/fetchPageInfo";
 import { fetchSkills } from "../utils/fetchSkills";
-
+export const getStaticProps: GetServerSideProps<Props> = async () =>{
+  const pageInfo: PageInfo = await fetchPageInfo();
+  const experience:Experience[] = await fetchExperience();
+  const skills: Skill[] = await fetchSkills();
+  return{
+    props:{
+      pageInfo,
+      experience,
+      skills
+    },
+    revalidate:10,
+    fallback:false
+  };
+}
 type Props = {
   pageInfo: PageInfo;
   experience:Experience[];
@@ -80,7 +93,7 @@ type Props = {
         <section id="contact" className="snap-center">
           <Contact pageInfo={pageInfo} />
         </section>
-        <section className="snap-center">
+        <section id="footer" className="snap-center">
           <Footer />
         </section>
       </main>
@@ -88,16 +101,3 @@ type Props = {
   );
 }
 export default Home;
-export const getStaticProps: GetStaticProps<Props> = async () =>{
-  const pageInfo: PageInfo = await fetchPageInfo();
-  const experience:Experience[] = await fetchExperience();
-  const skills: Skill[] = await fetchSkills();
-  return{
-    props:{
-      pageInfo,
-      experience,
-      skills
-    },
-    revalidate:10,
-  };
-}
