@@ -1,5 +1,7 @@
 import React from "react";
 import { IconComponent } from "./iconComponent";
+import { FiArrowUp } from "react-icons/fi";
+import Link from "next/link";
 function Footer() {
   const icons = ["twitter", "linkedin", "email"];
 
