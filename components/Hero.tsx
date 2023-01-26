@@ -1,7 +1,5 @@
 import React from "react";
 import { Cursor, useTypewriter } from "react-simple-typewriter";
-import Image from "next/image";
-import deved from "../public/dev-ed-wave.png";
 import Link from "next/link";
 import BackgroundCircles from "./BackgroundCircles";
 import { PageInfo } from "../typings";
