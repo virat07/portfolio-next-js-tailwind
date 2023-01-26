@@ -16,8 +16,6 @@ import { GetStaticProps } from "next";
 import { fetchExperience } from "../utils/fetchExperience";
 import { fetchPageInfo } from "../utils/fetchPageInfo";
 import { fetchSkills } from "../utils/fetchSkills";
-import { urlFor } from "../sanity";
-import Link from "next/link";
 
 type Props = {
   pageInfo: PageInfo;
@@ -82,19 +80,8 @@ const Home = ({ pageInfo, experience, skills }: Props) => {
         <section id="contact" className="snap-center">
           <Contact pageInfo={pageInfo} />
         </section>
-        <Link href="#hero">
-          <footer className="sticky bottom-5 w-full cursor-pointer">
-            <div className="flex items-center justify-center">
-              <img
-                className="h-10 w-10 rounded-full filter grayscale hover:grayscale-0 cursor-pointer"
-                src={urlFor(pageInfo?.heroImage).url()}
-                alt="owner"
-              />
-            </div>
-          </footer>
-        </Link>
         <section id="footer" className="snap-center">
-          <Footer />
+          <Footer pageInfo={pageInfo} />
         </section>
       </main>
     </>

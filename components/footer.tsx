@@ -1,8 +1,12 @@
 import React from "react";
 import { IconComponent } from "./iconComponent";
-import { FiArrowUp } from "react-icons/fi";
 import Link from "next/link";
-function Footer() {
+import { urlFor } from "../sanity";
+import { PageInfo } from "../typings";
+type Props = {
+  pageInfo: PageInfo
+};
+function Footer({pageInfo}:Props) {
   const icons = ["twitter", "linkedin", "email"];
 
   return (
@@ -24,6 +28,17 @@ function Footer() {
           </ul>
         </nav>
       </div>
+      <Link href="#hero">
+        <div className="sticky bottom-5 w-full cursor-pointer">
+          <div className="flex items-center justify-center">
+            <img
+              className="h-10 w-10 rounded-full filter grayscale hover:grayscale-0 cursor-pointer"
+              src={urlFor(pageInfo?.heroImage).url()}
+              alt="owner"
+            />
+          </div>
+        </div>
+      </Link>
       <div className="flex flex-col justify-center items-center text-center bg-gray-50"></div>
     </>
   );
